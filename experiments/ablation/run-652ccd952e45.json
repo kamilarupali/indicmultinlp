@@ -1,0 +1,150 @@
+{
+  "id": "652ccd952e45",
+  "created_at": "2026-09-30T09:11:39.501439+00:00",
+  "dataset": "data/processed/dataset_clean.csv",
+  "task": "sentiment",
+  "category": "ablation",
+  "model": "tfidf_lr",
+  "random_state": 42,
+  "test_size": 0.25,
+  "group_column": null,
+  "text_column": "text",
+  "label_column": "sentiment",
+  "train_rows": 82,
+  "test_rows": 28,
+  "metrics": {
+    "accuracy": 0.5,
+    "precision_macro": 0.3472,
+    "recall_macro": 0.4908,
+    "f1_macro": 0.3872,
+    "precision_weighted": 0.4033,
+    "recall_weighted": 0.5,
+    "f1_weighted": 0.4276
+  },
+  "classification_report": {},
+  "confusion_matrix": {
+    "labels": [
+      "Negative",
+      "Neutral",
+      "Positive"
+    ],
+    "values": [
+      [
+        6,
+        0,
+        1
+      ],
+      [
+        5,
+        0,
+        3
+      ],
+      [
+        5,
+        0,
+        8
+      ]
+    ]
+  },
+  "condition_metrics": [],
+  "errors": [
+    {
+      "text": "ವಿಮಾನ ನಿಲ್ದಾಣದ ಬಳಿ ಉತ್ತಮ ಹೋಟೆಲ್ ರೂಮ್ ಸಿಕ್ಕಿತು.",
+      "expected": "Positive",
+      "predicted": "Negative",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "This textbook offers lucid explanations of advanced algorithms.",
+      "expected": "Positive",
+      "predicted": "Negative",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Laptop display problem ఉంది, how to claim warranty?",
+      "expected": "Neutral",
+      "predicted": "Negative",
+      "category": "Code-Mixing & Matrix Language Switching",
+      "explanation": "Code-switching across scripts weakened token feature weights in both native and borrowed vocabulary spaces."
+    },
+    {
+      "text": "Aapka office kitne baje tak open rehta hai?",
+      "expected": "Neutral",
+      "predicted": "Negative",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "ఈ కోర్సు సిలబస్ చాలా పెద్దదిగా ఉంది కానీ విషయాలు ఉపయోగపడతాయి.",
+      "expected": "Neutral",
+      "predicted": "Positive",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Ee restaurant lo biryani taste worst, money waste.",
+      "expected": "Negative",
+      "predicted": "Positive",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Data science course ge admission yavaaga start aaguththe?",
+      "expected": "Neutral",
+      "predicted": "Negative",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Movie கதை மற்றும் direction was super, family entertainer!",
+      "expected": "Positive",
+      "predicted": "Negative",
+      "category": "Code-Mixing & Matrix Language Switching",
+      "explanation": "Code-switching across scripts weakened token feature weights in both native and borrowed vocabulary spaces."
+    },
+    {
+      "text": "How can I reset my password on this web application?",
+      "expected": "Neutral",
+      "predicted": "Positive",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Could you please guide me to the nearest metro station?",
+      "expected": "Neutral",
+      "predicted": "Negative",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "The support representative resolved my billing grievance immediately.",
+      "expected": "Positive",
+      "predicted": "Negative",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Python programming ke liye best online course kaun sa hai?",
+      "expected": "Neutral",
+      "predicted": "Positive",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Indha padam romba nalla irukku, direction super.",
+      "expected": "Positive",
+      "predicted": "Negative",
+      "category": "Romanization / Phonetic Ambiguity",
+      "explanation": "Informal phonetic spelling in Latin script produced sub-optimal subword alignments and out-of-vocabulary mismatches."
+    },
+    {
+      "text": "Machine learning padikka best tutorial link anupunga bro.",
+      "expected": "Neutral",
+      "predicted": "Negative",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    }
+  ]
+}

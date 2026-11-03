@@ -1,0 +1,27 @@
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+dist/
+.env
+data/raw/*
+data/processed/*
+data/train/*
+data/validation/*
+data/test/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/train/.gitkeep
+!data/validation/.gitkeep
+!data/test/.gitkeep
+models/**
+!models/**/.gitkeep
+*.joblib
+*.pt
+*.safetensors
+# Local Python environments
+.venv/
+backend/.venv/
+.DS_Store
+.codex-write-check

@@ -1,0 +1,5 @@
+# Install after selecting a PyTorch build compatible with your OS/GPU.
+-r requirements.txt
+transformers>=4.45,<5
+datasets>=3,<5
+accelerate>=1,<2

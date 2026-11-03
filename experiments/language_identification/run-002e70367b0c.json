@@ -1,0 +1,165 @@
+{
+  "id": "002e70367b0c",
+  "created_at": "2026-09-30T09:11:38.230883+00:00",
+  "dataset": "data/processed/dataset_clean.csv",
+  "task": "language",
+  "category": "language_identification",
+  "model": "tfidf_lr",
+  "random_state": 42,
+  "test_size": 0.25,
+  "group_column": null,
+  "text_column": "text",
+  "label_column": "language",
+  "train_rows": 82,
+  "test_rows": 28,
+  "metrics": {
+    "accuracy": 0.5357,
+    "precision_macro": 0.5957,
+    "recall_macro": 0.54,
+    "f1_macro": 0.5421,
+    "precision_weighted": 0.6176,
+    "recall_weighted": 0.5357,
+    "f1_weighted": 0.55
+  },
+  "classification_report": {},
+  "confusion_matrix": {
+    "labels": [
+      "English",
+      "Hindi",
+      "Kannada",
+      "Tamil",
+      "Telugu"
+    ],
+    "values": [
+      [
+        3,
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        4,
+        2,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        3,
+        0,
+        2
+      ],
+      [
+        1,
+        1,
+        0,
+        2,
+        1
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        3
+      ]
+    ]
+  },
+  "condition_metrics": [],
+  "errors": [
+    {
+      "text": "This textbook offers lucid explanations of advanced algorithms.",
+      "expected": "English",
+      "predicted": "Tamil",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Movie ticket cancellation refund account lo inka credit kaledhu.",
+      "expected": "Telugu",
+      "predicted": "Kannada",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Laptop display problem ఉంది, how to claim warranty?",
+      "expected": "Telugu",
+      "predicted": "Kannada",
+      "category": "Code-Mixing & Matrix Language Switching",
+      "explanation": "Code-switching across scripts weakened token feature weights in both native and borrowed vocabulary spaces."
+    },
+    {
+      "text": "Flight ticket cancel થઈ ગઈ, please refund my amount.",
+      "expected": "Hindi",
+      "predicted": "Kannada",
+      "category": "Code-Mixing & Matrix Language Switching",
+      "explanation": "Code-switching across scripts weakened token feature weights in both native and borrowed vocabulary spaces."
+    },
+    {
+      "text": "Aapka office kitne baje tak open rehta hai?",
+      "expected": "Hindi",
+      "predicted": "Kannada",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Ee movie thumba chennagide, acting super aagide.",
+      "expected": "Kannada",
+      "predicted": "Telugu",
+      "category": "Romanization / Phonetic Ambiguity",
+      "explanation": "Informal phonetic spelling in Latin script produced sub-optimal subword alignments and out-of-vocabulary mismatches."
+    },
+    {
+      "text": "Data science course ge admission yavaaga start aaguththe?",
+      "expected": "Kannada",
+      "predicted": "Telugu",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Movie கதை மற்றும் direction was super, family entertainer!",
+      "expected": "Tamil",
+      "predicted": "English",
+      "category": "Code-Mixing & Matrix Language Switching",
+      "explanation": "Code-switching across scripts weakened token feature weights in both native and borrowed vocabulary spaces."
+    },
+    {
+      "text": "How can I reset my password on this web application?",
+      "expected": "English",
+      "predicted": "Telugu",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Python programming ke liye best online course kaun sa hai?",
+      "expected": "Hindi",
+      "predicted": "Telugu",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Book बहुत interesting है, I recommend it for college exams.",
+      "expected": "Hindi",
+      "predicted": "Telugu",
+      "category": "Code-Mixing & Matrix Language Switching",
+      "explanation": "Code-switching across scripts weakened token feature weights in both native and borrowed vocabulary spaces."
+    },
+    {
+      "text": "Order cancel panniten aana refund innum varala, help pannunga.",
+      "expected": "Tamil",
+      "predicted": "Hindi",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Machine learning padikka best tutorial link anupunga bro.",
+      "expected": "Tamil",
+      "predicted": "Telugu",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "id": "7cb6fb39206d",
+  "created_at": "2026-10-01T05:55:57.083696+00:00",
+  "dataset": "data/train/dataset.csv",
+  "task": "sentiment",
+  "category": "sentiment",
+  "model": "tfidf_lr",
+  "random_state": 42,
+  "test_size": 0.2,
+  "group_column": null,
+  "text_column": "text",
+  "label_column": "sentiment",
+  "train_rows": 61,
+  "test_rows": 16,
+  "metrics": {
+    "accuracy": 0.3125,
+    "precision_macro": 0.119,
+    "recall_macro": 0.2381,
+    "f1_macro": 0.1587,
+    "precision_weighted": 0.1562,
+    "recall_weighted": 0.3125,
+    "f1_weighted": 0.2083
+  },
+  "classification_report": {
+    "Negative": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 6.0
+    },
+    "Neutral": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 3.0
+    },
+    "Positive": {
+      "precision": 0.35714285714285715,
+      "recall": 0.7142857142857143,
+      "f1-score": 0.47619047619047616,
+      "support": 7.0
+    },
+    "accuracy": 0.3125,
+    "macro avg": {
+      "precision": 0.11904761904761905,
+      "recall": 0.2380952380952381,
+      "f1-score": 0.15873015873015872,
+      "support": 16.0
+    },
+    "weighted avg": {
+      "precision": 0.15625,
+      "recall": 0.3125,
+      "f1-score": 0.20833333333333331,
+      "support": 16.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Negative",
+      "Neutral",
+      "Positive"
+    ],
+    "values": [
+      [
+        0,
+        0,
+        6
+      ],
+      [
+        0,
+        0,
+        3
+      ],
+      [
+        2,
+        0,
+        5
+      ]
+    ]
+  },
+  "condition_metrics": [],
+  "errors": [
+    {
+      "text": "பல்கலைக்கழக தேர்வு முடிவுகள் எப்போது வெளியாகும்?",
+      "expected": "Neutral",
+      "predicted": "Positive",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Data science course ge admission yavaaga start aaguththe?",
+      "expected": "Neutral",
+      "predicted": "Positive",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Gaana bohot bekar tha, movie me koi logic nahi tha.",
+      "expected": "Negative",
+      "predicted": "Positive",
+      "category": "Negation & Polarity Reversal",
+      "explanation": "Sentence contains a morphological or lexical negation marker that inverted local polarity, which n-gram TF-IDF failed to capture."
+    },
+    {
+      "text": "बस समय पर नहीं आई और टिकट काउंटर पर कोई नहीं था।",
+      "expected": "Negative",
+      "predicted": "Positive",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Comedy scene tumba boring aagithu, ticket rate waste.",
+      "expected": "Negative",
+      "predicted": "Positive",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Class time कब शुरू होगा, please inform the schedule.",
+      "expected": "Neutral",
+      "predicted": "Positive",
+      "category": "Code-Mixing & Matrix Language Switching",
+      "explanation": "Code-switching across scripts weakened token feature weights in both native and borrowed vocabulary spaces."
+    },
+    {
+      "text": "The hotel room offered high comfort and panoramic mountain views.",
+      "expected": "Positive",
+      "predicted": "Negative",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "రైలు టికెట్ బుకింగ్ కోసం యాప్ చాలా నెమ్మదిగా పనిచేస్తోంది.",
+      "expected": "Negative",
+      "predicted": "Positive",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Hotel la saapadu romba kevalama irundhadhu, waste of money.",
+      "expected": "Negative",
+      "predicted": "Positive",
+      "category": "Negation & Polarity Reversal",
+      "explanation": "Sentence contains a morphological or lexical negation marker that inverted local polarity, which n-gram TF-IDF failed to capture."
+    },
+    {
+      "text": "ரயில் மிகவும் தாமதமாக வந்தது, பெட்டிகள் அசுத்தமாக இருந்தன.",
+      "expected": "Negative",
+      "predicted": "Positive",
+      "category": "Rare Word / OOV",
+      "explanation": "Domain-specific vocabulary or low-frequency Indic n-grams received near-zero TF-IDF weight."
+    },
+    {
+      "text": "Movie bahut acchi hai, storyline ekdum mast lagi.",
+      "expected": "Positive",
+      "predicted": "Negative",
+      "category": "Romanization / Phonetic Ambiguity",
+      "explanation": "Informal phonetic spelling in Latin script produced sub-optimal subword alignments and out-of-vocabulary mismatches."
+    }
+  ]
+}
