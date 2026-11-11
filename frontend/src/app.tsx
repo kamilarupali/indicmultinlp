@@ -1,4 +1,4 @@
-import { Component, ErrorInfo, ReactNode } from 'react';
+import { Component, ErrorInfo, ReactNode, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Sidebar from './components/sidebar';
 import Navbar from './components/navbar';
@@ -75,15 +75,29 @@ const pages: { [key: string]: [string, () => JSX.Element] } = {
 };
 
 export default function App() {
-  const rawPath = useLocation().pathname;
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const location = useLocation();
+  const rawPath = location.pathname;
   const cleanPath = (rawPath.split('?')[0].split('#')[0].replace(/\/+$/, '') || '/').toLowerCase();
   const [title, Page] = pages[cleanPath] ?? pages[rawPath] ?? pages['/'];
 
+  // Automatically close mobile drawer navigation whenever route changes
+  useEffect(() => {
+    setIsMobileNavOpen(false);
+  }, [location.pathname, location.search]);
+
   return (
     <div className="app-shell">
-      <Sidebar />
+      <Sidebar
+        isOpen={isMobileNavOpen}
+        onClose={() => setIsMobileNavOpen(false)}
+      />
       <main className="main-area">
-        <Navbar title={title} />
+        <Navbar
+          title={title}
+          onToggleNav={() => setIsMobileNavOpen((prev) => !prev)}
+          isNavOpen={isMobileNavOpen}
+        />
         <div className="page-content">
           <PageErrorBoundary title={title}>
             <Page />

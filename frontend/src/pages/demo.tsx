@@ -378,14 +378,14 @@ export default function ExampleDemo() {
             </span>
             <h3 style={{ margin: '2px 0 0', fontSize: '17px' }}>Run Example or Custom Sentence</h3>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
             <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Target:</span>
             <select
               value={testTarget}
               onChange={(e) => setTestTarget(e.target.value)}
               style={{
-                padding: '6px 12px',
-                fontSize: '12px',
+                padding: '8px 12px',
+                fontSize: '13px',
                 background: 'var(--input-bg)',
                 border: '1px solid var(--border-color)',
                 borderRadius: '6px',
@@ -407,7 +407,7 @@ export default function ExampleDemo() {
             <button
               type="button"
               className="primary-button"
-              style={{ padding: '6px 16px', fontSize: '12px' }}
+              style={{ padding: '8px 18px', fontSize: '13px', minHeight: '40px' }}
               onClick={runLiveTest}
               disabled={testing || !testText.trim()}
             >
@@ -538,7 +538,7 @@ export default function ExampleDemo() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(300px, 100%), 1fr))',
           gap: '16px',
           marginBottom: '32px',
         }}
@@ -622,6 +622,8 @@ export default function ExampleDemo() {
                     fontSize: '13.5px',
                     color: 'var(--text-primary)',
                     lineHeight: 1.5,
+                    wordBreak: 'break-word',
+                    overflowWrap: 'anywhere',
                   }}
                 >
                   "{ex.inputText}"
@@ -663,6 +665,8 @@ export default function ExampleDemo() {
                     color: 'var(--text-primary)',
                     fontWeight: 600,
                     lineHeight: 1.5,
+                    wordBreak: 'break-word',
+                    overflowWrap: 'anywhere',
                   }}
                 >
                   {ex.translatedText}

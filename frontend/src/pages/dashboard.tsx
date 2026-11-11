@@ -608,20 +608,22 @@ export default function Dashboard() {
             </div>
 
             {history.length > 0 && (
-              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap', width: '100%', maxWidth: '320px' }}>
                 <input
                   type="text"
                   value={activitySearch}
                   onChange={(e) => setActivitySearch(e.target.value)}
                   placeholder="Filter activity..."
                   style={{
-                    padding: '6px 12px',
-                    fontSize: '12px',
+                    padding: '8px 12px',
+                    fontSize: '13px',
                     background: 'var(--input-bg)',
                     border: '1px solid var(--border-color)',
                     borderRadius: '6px',
                     color: 'var(--text-primary)',
-                    minWidth: '180px',
+                    width: '100%',
+                    minWidth: '0',
+                    boxSizing: 'border-box',
                   }}
                 />
               </div>
@@ -762,7 +764,7 @@ export default function Dashboard() {
                   </div>
 
                   {/* Two-Column Query & Response */}
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', gap: '14px' }}>
                     {/* User Query */}
                     <div>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
@@ -787,6 +789,8 @@ export default function Dashboard() {
                           borderRadius: '6px',
                           fontSize: '13.5px',
                           color: 'var(--text-primary)',
+                          wordBreak: 'break-word',
+                          overflowWrap: 'anywhere',
                         }}
                       >
                         "{item.originalText || ''}"
@@ -820,6 +824,8 @@ export default function Dashboard() {
                           fontSize: '13.5px',
                           color: item.status === 'error' ? '#fca5a5' : 'var(--text-primary)',
                           fontWeight: item.status === 'success' || item.status === 'same_language' ? 600 : 400,
+                          wordBreak: 'break-word',
+                          overflowWrap: 'anywhere',
                         }}
                       >
                         {item.status === 'error'
@@ -886,6 +892,7 @@ export default function Dashboard() {
         </div>
 
         <div
+          className="table-wrap"
           style={{
             overflowX: 'auto',
             background: 'var(--panel-bg)',
@@ -894,7 +901,7 @@ export default function Dashboard() {
             boxShadow: 'var(--card-shadow)',
           }}
         >
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13px' }}>
+          <table style={{ width: '100%', minWidth: '700px', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13px' }}>
             <thead>
               <tr style={{ background: 'var(--table-header)', borderBottom: '1px solid var(--border-color)' }}>
                 <th style={{ padding: '12px 14px', fontWeight: 700, color: 'var(--text-muted)' }}>LANGUAGE</th>

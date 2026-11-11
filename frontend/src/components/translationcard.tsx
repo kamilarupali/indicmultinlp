@@ -164,15 +164,15 @@ export default function TranslationCard({ data }: Props) {
   }
 
   return (
-    <article className="result-card" style={{ gridColumn: 'span 2' }}>
+    <article className="result-card" style={{ gridColumn: '1 / -1' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
         <div>
           <span className="card-label">CROSS-LINGUAL MEANING TRANSLATION</span>
-          <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: 'var(--text-primary)' }}>
+          <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: 'var(--text-primary)', wordBreak: 'break-word' }}>
             Semantic Translation Engine ({data.language.language} → {activeOption.name})
           </h3>
         </div>
-        <div style={{ display: 'flex', gap: '6px' }}>
+        <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
           {activeStatus === 'success' && activeMeaning && (
             <button
               type="button"
@@ -283,7 +283,7 @@ export default function TranslationCard({ data }: Props) {
             Fetching neural translation for {activeOption.name}…
           </div>
         ) : activeStatus === 'success' || activeStatus === 'same_language' ? (
-          <div style={{ fontSize: '17px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.6 }}>
+          <div style={{ fontSize: '17px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.6, wordBreak: 'break-word', overflowWrap: 'anywhere' }}>
             {activeMeaning || 'No translation returned.'}
           </div>
         ) : (

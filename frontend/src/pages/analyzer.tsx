@@ -147,7 +147,7 @@ export default function Analyzer() {
           </div>
         </div>
 
-        <label className="select-label" style={{ margin: 0, minWidth: '240px' }}>
+        <label className="select-label model-select-label" style={{ margin: 0 }}>
           CLASSIFIER MODEL
           <select value={model} onChange={(e) => handleModelChange(e.target.value)}>
             {models.map((m) => (
@@ -397,7 +397,7 @@ export default function Analyzer() {
           )}
 
           {/* Preprocessing & N-Gram LM Card */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '14px', marginTop: '16px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '14px', marginTop: '16px' }}>
             <div className="info-card">
               <div className="eyebrow">PREPROCESSING & NORMALIZATION TRACE</div>
               <div style={{ display: 'grid', gap: '8px', marginTop: '10px', fontSize: '12px' }}>

@@ -87,7 +87,7 @@ export default function DatasetExplorer() {
           </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', gap: '16px' }}>
           <div style={{ background: '#101720', padding: '16px', borderRadius: '8px', border: '1px solid #2b3948' }}>
             <h4 style={{ color: '#72d9b9', marginTop: 0 }}>Language & Script Stratification</h4>
             <ul style={{ fontSize: '13px', lineHeight: 1.8, color: '#b8c5d3', paddingLeft: '18px' }}>

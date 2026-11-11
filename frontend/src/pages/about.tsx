@@ -16,7 +16,7 @@ export default function AboutProject() {
       </div>
 
       {/* Real Project Indicators Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px', margin: '24px 0 32px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(180px, 100%), 1fr))', gap: '14px', margin: '24px 0 32px' }}>
         <div className="history-card" style={{ textAlign: 'center', padding: '18px' }}>
           <div style={{ fontSize: '28px', fontWeight: 800, color: 'var(--accent-teal)' }}>110</div>
           <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)', marginTop: '4px' }}>Curated Master Sentences</div>
@@ -124,7 +124,7 @@ export default function AboutProject() {
         <div className="eyebrow">TRANSPARENCY & PROVENANCE</div>
         <h3 style={{ margin: '4px 0 16px' }}>System Capabilities vs Realistic Service Limitations</h3>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '16px' }}>
           <div style={{ padding: '16px', background: 'var(--input-bg)', borderRadius: '8px', border: '1px solid rgba(114, 217, 185, 0.3)' }}>
             <h4 style={{ margin: '0 0 8px', color: 'var(--accent-teal)' }}>✅ Supported Capabilities</h4>
             <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.7 }}>

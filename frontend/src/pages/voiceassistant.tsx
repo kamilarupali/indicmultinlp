@@ -802,8 +802,10 @@ export default function VoiceAssistant() {
                 border: '1px solid var(--border-color)',
                 borderRadius: '6px',
                 color: 'var(--text-primary)',
-                flex: 1,
-                minWidth: '180px',
+                flex: '1 1 180px',
+                minWidth: '0',
+                maxWidth: '100%',
+                boxSizing: 'border-box',
               }}
             />
             <input
@@ -820,13 +822,15 @@ export default function VoiceAssistant() {
                 borderRadius: '6px',
                 color: 'var(--text-primary)',
                 width: '120px',
+                flexShrink: 0,
+                boxSizing: 'border-box',
               }}
             />
             <button
               type="button"
               className="primary-button"
               onClick={handleAddCustomLanguage}
-              style={{ padding: '8px 16px' }}
+              style={{ padding: '8px 16px', minHeight: '40px' }}
             >
               Add Language
             </button>
@@ -1085,7 +1089,7 @@ export default function VoiceAssistant() {
         )}
 
         {/* Text Input Row */}
-        <div style={{ display: 'flex', gap: '8px', maxWidth: '740px', margin: '0 auto' }}>
+        <div className="voice-input-row" style={{ display: 'flex', gap: '8px', maxWidth: '740px', margin: '0 auto', flexWrap: 'wrap' }}>
           <input
             type="text"
             value={query}
@@ -1095,18 +1099,20 @@ export default function VoiceAssistant() {
             }}
             placeholder="Type or speak in Telugu, Hindi, Tamil, Kannada, Odia, Urdu, Romanized text, or 'translate that'…"
             style={{
-              flex: 1,
+              flex: '1 1 260px',
+              minWidth: '0',
               padding: '12px 14px',
               background: 'var(--input-bg)',
               border: isReviewingTranscript ? '1.5px solid var(--accent-teal)' : '1px solid var(--border-color)',
               borderRadius: '8px',
               color: 'var(--text-primary)',
               fontSize: '14px',
+              boxSizing: 'border-box',
             }}
           />
           <button
-            className="primary-button"
-            style={{ padding: '12px 22px', whiteSpace: 'nowrap' }}
+            className="primary-button voice-send-btn"
+            style={{ padding: '12px 22px', whiteSpace: 'nowrap', minHeight: '44px' }}
             disabled={busy || !query.trim()}
             onClick={() => void handleSendQuery()}
           >
@@ -1538,7 +1544,7 @@ export default function VoiceAssistant() {
               <div className="eyebrow" style={{ marginBottom: '8px' }}>
                 CROSS-LINGUAL MEANING TRANSLATIONS (TELUGU, HINDI, TAMIL, KANNADA, ENGLISH + TARGET)
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '12px' }}>
                 {Object.entries(response.translations.translations).map(([code, item]) => {
                   const meaning = item.translated_meaning || item.text;
                   const isSuccess = item.status === 'success' || item.status === 'same_language';
@@ -1629,20 +1635,23 @@ export default function VoiceAssistant() {
             <div className="eyebrow">PERSISTENT SESSION LOG</div>
             <h3 style={{ margin: '2px 0 0' }}>Conversation & Translation History ({history.length})</h3>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', maxWidth: '320px', width: '100%' }}>
             <input
               type="text"
               placeholder="Search history…"
               value={historySearch}
               onChange={(e) => setHistorySearch(e.target.value)}
               style={{
-                padding: '6px 12px',
-                fontSize: '12px',
+                padding: '8px 12px',
+                fontSize: '13px',
                 background: 'var(--input-bg)',
                 border: '1px solid var(--border-color)',
                 borderRadius: '6px',
                 color: 'var(--text-primary)',
-                width: '180px',
+                flex: '1 1 160px',
+                minWidth: '0',
+                maxWidth: '100%',
+                boxSizing: 'border-box',
               }}
             />
             {history.length > 0 && (
@@ -1651,6 +1660,7 @@ export default function VoiceAssistant() {
                 className="btn-action-sm danger"
                 onClick={clearAllHistory}
                 title="Clear all saved history"
+                style={{ minHeight: '36px', padding: '6px 12px' }}
               >
                 🧹 Clear All
               </button>
@@ -1800,13 +1810,13 @@ export default function VoiceAssistant() {
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', gap: '12px' }}>
                   {/* Original Input */}
                   <div>
                     <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '3px', textTransform: 'uppercase', fontWeight: 700 }}>
                       Original ({item.sourceLanguage || item.detectedLanguage}):
                     </div>
-                    <div style={{ fontSize: '13.5px', color: 'var(--text-primary)', fontWeight: 500 }}>
+                    <div style={{ fontSize: '13.5px', color: 'var(--text-primary)', fontWeight: 500, wordBreak: 'break-word', overflowWrap: 'anywhere' }}>
                       "{item.originalText}"
                     </div>
                   </div>
@@ -1827,6 +1837,8 @@ export default function VoiceAssistant() {
                             : '#f59e0b',
                         fontWeight: item.status === 'success' || item.status === 'same_language' ? 600 : 400,
                         fontStyle: item.status === 'success' || item.status === 'same_language' ? 'normal' : 'italic',
+                        wordBreak: 'break-word',
+                        overflowWrap: 'anywhere',
                       }}
                     >
                       {item.translatedMeaning}

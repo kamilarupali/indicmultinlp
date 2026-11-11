@@ -303,7 +303,7 @@ export default function Home() {
           <div style={{ width: '14.5%', background: '#f59e0b' }} title="Validation Split: 16 instances (14.5%)" />
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '12px', fontSize: '12.5px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(200px, 100%), 1fr))', gap: '12px', fontSize: '12.5px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#72d9b9' }} />
             <span><strong>Training Split:</strong> 77 rows (70%)</span>
@@ -331,7 +331,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '16px' }}>
           <div style={{ padding: '18px', background: 'var(--panel-bg)', borderRadius: '10px', border: '1px solid rgba(114, 217, 185, 0.3)' }}>
             <h4 style={{ margin: '0 0 10px', color: 'var(--accent-teal)', fontSize: '14px' }}>
               ✅ Verified Architectural Strengths
@@ -370,7 +370,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', gap: '16px' }}>
           {PLATFORM_CARDS.map((card) => (
             <Link
               key={card.to}

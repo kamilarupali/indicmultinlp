@@ -61,7 +61,7 @@ export default function ModelComparisonPage() {
               Compare accuracy, macro-averaged F1, and CPU/GPU inference latency across the evaluated models.
             </p>
           </div>
-          <div style={{ display: 'flex', gap: '8px' }}>
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '8px' }}>
             <button
               className={selectedMetric === 'macro_f1' ? 'primary-button' : 'secondary-button'}
               onClick={() => setSelectedMetric('macro_f1')}
@@ -124,7 +124,7 @@ export default function ModelComparisonPage() {
       </div>
 
       <div className="table-wrap">
-        <table>
+        <table style={{ minWidth: '760px' }}>
           <thead>
             <tr>
               <th>Model Name</th>
